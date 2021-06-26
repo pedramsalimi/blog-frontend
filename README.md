@@ -4,15 +4,65 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 - [Typescript](https://www.typescriptlang.org/)
 - [@reduxjs/toolkit](https://redux-toolkit.js.org/) for redux development
-- [axios](https://axios-http.com/) http client
+- [axios](https://axios-http.com/) as http client
 - [next-intl](https://github.com/amannn/next-intl) for managing translations, date, time and number formatting
 - [swr](https://swr.vercel.app/) for http cache invalidation strategy
 - [sass](https://sass-lang.com/) as default styling language
-- managing cookies in both server side and client side
+- [tailwind](https://tailwindcss.com/) as utility-first CSS framework
+- [prettier](https://prettier.io/) for code formatting
+- [stylelint](https://stylelint.io/) as linter for styles
+- managing cookies in both server side and client side by [universal-cookie](https://github.com/reactivestack/cookies/tree/master/packages/universal-cookie)
+- importing SVG files as React Component
+- helper functions for handling auth guards
+- VS Code debugging
 
 ## Getting Started
 
-First, run the development server:
+If you want to include neccesary momentjs locales add your locales at ./plugins/moment.js TODO line then uncomment moment plugin in next.config.js file
+
+Set your i18n translations remote address at ./plugins/i18n.js first line then run:
+
+```bash
+npm run i18n
+# or
+yarn i18n
+```
+
+If you want to generate your types from OpenApi json file set your file address at package.json "api" script then run:
+
+```bash
+npm run api
+# or
+yarn api
+```
+
+To Format your code with Prettier run:
+
+```bash
+npm run format
+# or
+yarn format
+```
+
+To Format + Lint and type check your code just run:
+
+```bash
+npm run ci
+# or
+yarn ci
+```
+
+Run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+If you want to set momentjs locales uncomment moment plugin in next.config.js file
+
+Run the development server:
 
 ```bash
 npm run dev

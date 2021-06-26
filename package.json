@@ -12,10 +12,9 @@
     "analyze": "ANALYZE=true yarn build",
     "i18n": "node ./plugins/i18n.js ",
     "format": "prettier --no-error-on-unmatched-pattern --write ./src/**/*.{ts,tsx,scss,css}",
-    "json": "prettier --write ./api.json",
     "tsc": "tsc",
     "ci": "yarn lint && yarn format && yarn tsc",
-    "api": "swagger-typescript-api --no-client --modular --responses --extract-request-params   -p http://nextjsbp.azurewebsites.net/swagger/v1/swagger.json -o ./src/types/api"
+    "api": "swagger-typescript-api --no-client --modular --responses --extract-request-params   -p https://{{apiroute}}/swagger.json -o ./src/types/api"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.0",
