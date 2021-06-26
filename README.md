@@ -60,8 +60,6 @@ npm run dev
 yarn dev
 ```
 
-If you want to set momentjs locales uncomment moment plugin in next.config.js file
-
 Run the development server:
 
 ```bash
