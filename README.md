@@ -11,7 +11,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [tailwind](https://tailwindcss.com/) as utility-first CSS framework
 - [prettier](https://prettier.io/) for code formatting
 - [stylelint](https://stylelint.io/) as linter for styles
-- managing cookies in both server side and client side by [universal-cookie](https://github.com/reactivestack/cookies/tree/master/packages/universal-cookie)
+- [universal-cookie](https://github.com/reactivestack/cookies/tree/master/packages/universal-cookie) for managing cookies in both server side and client side by
 - importing SVG files as React Component
 - helper functions for handling auth guards
 - VS Code debugging
