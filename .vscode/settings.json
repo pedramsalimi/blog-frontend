@@ -1,0 +1,14 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "css.customData": [".vscode/css_custom_data.json"],
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "css.validate": false,
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html"
+  },
+  "tailwindCSS.colorDecorators": true,
+  "scss.validate": false,
+  "stylelint.packageManager": "yarn",
+  "terminal.integrated.tabs.enabled": true
+}

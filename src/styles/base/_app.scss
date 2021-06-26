@@ -1,0 +1,35 @@
+@layer base {
+  *,
+  ::before,
+  ::after {
+    @apply transform-none border-solid border-0;
+  }
+  body {
+    @apply overflow-visible;
+  }
+  button {
+  }
+  input {
+  }
+  a {
+  }
+
+  textarea {
+  }
+  ul {
+  }
+  li {
+  }
+  hr {
+  }
+  img {
+  }
+  input[type="radio"] {
+    -webkit-appearance: radio;
+  }
+  input[type="checkbox"] {
+  }
+  .no-tap {
+    -webkit-tap-highlight-color: transparent;
+  }
+}

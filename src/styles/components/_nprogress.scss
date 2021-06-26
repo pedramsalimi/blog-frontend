@@ -1,0 +1,55 @@
+@layer components {
+  @-webkit-keyframes nprogress-spinner {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @keyframes nprogress-spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  #nprogress {
+    @apply pointer-events-none;
+    .bar {
+      height: 3px;
+      @apply bg-primary fixed z-progress top-0 left-0  w-full;
+    }
+    .peg {
+      box-shadow: 0 0 10px theme("colors.primary"),
+        0 0 5px theme("colors.primary");
+      -webkit-transform: rotate(3deg) translate(0px, -4px);
+      -ms-transform: rotate(3deg) translate(0px, -4px);
+      transform: rotate(3deg) translate(0px, -4px);
+      @apply block right-0 w-b20 h-full opacity-100 absolute;
+    }
+    .spinner {
+      @apply hidden fixed z-progress top-b3 right-b3;
+    }
+    .spinner-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      -webkit-animation: nprogress-spinner 400ms linear infinite;
+      animation: nprogress-spinner 400ms linear infinite;
+      @apply border-t-2 border-l-2 border-primary box-border;
+    }
+  }
+  .nprogress-custom-parent {
+    @apply relative overflow-hidden;
+    #nprogress {
+      .spinner {
+        @apply absolute;
+      }
+      .bar {
+        @apply absolute;
+      }
+    }
+  }
+}
