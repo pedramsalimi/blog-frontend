@@ -1,5 +1,15 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Features
+
+- [Typescript](https://www.typescriptlang.org/)
+- [@reduxjs/toolkit](https://redux-toolkit.js.org/) for redux development
+- [axios](https://axios-http.com/) http client
+- [next-intl](https://github.com/amannn/next-intl) for managing translations, date, time and number formatting
+- [swr](https://swr.vercel.app/) for http cache invalidation strategy
+- [sass](https://sass-lang.com/) as default styling language
+- managing cookies in both server side and client side
+
 ## Getting Started
 
 First, run the development server:
