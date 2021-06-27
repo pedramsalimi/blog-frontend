@@ -27,10 +27,10 @@
       -webkit-transform: rotate(3deg) translate(0px, -4px);
       -ms-transform: rotate(3deg) translate(0px, -4px);
       transform: rotate(3deg) translate(0px, -4px);
-      @apply block right-0 w-b20 h-full opacity-100 absolute;
+      @apply block right-0 w-24 h-full opacity-100 absolute;
     }
     .spinner {
-      @apply hidden fixed z-progress top-b3 right-b3;
+      @apply hidden fixed z-progress top-4 right-3;
     }
     .spinner-icon {
       width: 18px;

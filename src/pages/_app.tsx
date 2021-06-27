@@ -1,4 +1,4 @@
-import type { AppContext, AppInitialProps, AppProps } from "next/app";
+import type { AppProps } from "next/app";
 import type { PageProps, PageWithLayout } from "@types";
 
 import { useEffect } from "react";
@@ -10,6 +10,8 @@ import store from "@store";
 import { getDefaultLayout } from "@layouts";
 import { NextIntlProvider } from "next-intl";
 import NProgress from "nprogress";
+
+import "@styles/index.scss";
 
 function MyApp({ Component, pageProps }: AppProps<PageProps>) {
   const { locale, events } = useRouter();
