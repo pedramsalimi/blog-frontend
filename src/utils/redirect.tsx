@@ -27,7 +27,6 @@ export function clientRedirect<T extends PageProps>(
     componentDidMount() {
       const { getUrl, asPath, isAllowd = () => true } = redirect;
       if (isAllowd(this.props)) {
-        this.setState({ loading: true });
         Router.replace(getUrl(this.props), asPath); // Router.replace might be better here? not sure
       }
     }

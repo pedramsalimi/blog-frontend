@@ -1,6 +1,5 @@
 {
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "css.customData": [".vscode/css_custom_data.json"],
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "css.validate": false,

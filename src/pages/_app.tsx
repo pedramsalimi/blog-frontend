@@ -1,5 +1,5 @@
 import type { AppProps } from "next/app";
-import type { PageProps } from "@types";
+import type { PageProps, PageWithLayout } from "@types";
 
 import { useEffect } from "react";
 import { Provider } from "react-redux";
@@ -7,11 +7,11 @@ import { useRouter } from "next/router";
 import { getCookie } from "@utils/Cookies";
 import { COOKIE_LCOALE_KEY } from "@utils/constants";
 import store from "@store";
-import { PageWithLayout, getDefaultLayout } from "@layouts";
+import { getDefaultLayout } from "@layouts";
 import { NextIntlProvider } from "next-intl";
 import NProgress from "nprogress";
 
-const MyApp = ({ Component, pageProps }: AppProps<PageProps>) => {
+function MyApp({ Component, pageProps }: AppProps<PageProps>) {
   const { locale, events } = useRouter();
 
   useEffect(() => {
@@ -64,13 +64,13 @@ const MyApp = ({ Component, pageProps }: AppProps<PageProps>) => {
       // Also an explicit time zone is helpful to ensure dates render the
       // same way on the client as on the server, which might be located
       // in a different time zone.
-      timeZone="Austria/Vienna"
+      // timeZone="Austria/Vienna"
     >
       <Provider store={store}>
         {getLayout(<Component {...pageProps} />, { user: false })}
       </Provider>
     </NextIntlProvider>
   );
-};
+}
 
 export default MyApp;

@@ -7,14 +7,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "dev-node": "node server.js",
+    "start-node": "NODE_ENV=production node server.js",
     "lint": "next lint --no-error-on-unmatched-pattern",
     "inspect": "NODE_OPTIONS='--inspect' next dev",
     "analyze": "ANALYZE=true yarn build",
     "i18n": "node ./plugins/i18n.js ",
-    "format": "prettier --no-error-on-unmatched-pattern --write ./src/**/*.{ts,tsx,scss,css}",
+    "format": "prettier --no-error-on-unmatched-pattern --write ./**/*.{ts,tsx,scss,css,json}",
     "tsc": "tsc",
     "ci": "yarn lint && yarn format && yarn tsc",
-    "api": "swagger-typescript-api --no-client --modular --responses --extract-request-params   -p https://{{apiroute}}/swagger.json -o ./src/types/api"
+    "api": "swagger-typescript-api --no-client --modular --responses --extract-request-params   -p https://{{api}}.azurewebsites.net/swagger/v1/swagger.json -o ./src/types/api"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.0",

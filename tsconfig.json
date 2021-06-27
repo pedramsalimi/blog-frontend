@@ -22,6 +22,7 @@
       "@types": ["types"],
       "@gate": ["gate"],
       "@store": ["store"],
+      "@locales/*": ["locales/*"],
       "@styles/*": ["styles/*"],
       "@hooks/*": ["hooks/*"],
       "@slices/*": ["store/slices/*"],

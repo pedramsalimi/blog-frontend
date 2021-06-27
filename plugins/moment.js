@@ -4,7 +4,7 @@ module.exports = (nextConfig = {}) => {
       const { webpack } = options;
 
       config.plugins.push(
-        new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /en/) //TODO: add your lcoales here
+        new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /en|de/) //TODO: add your lcoales here
       );
 
       if (typeof nextConfig.webpack === "function") {

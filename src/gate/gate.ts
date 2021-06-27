@@ -234,24 +234,24 @@ type RequiredProp<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>> &
 type GateMethodRequest<D, P> = Omit<GateRequest<D, P>, "method" | "isForm">;
 
 const api = {
-  delete: function <R, D, P>(req: GateMethodRequest<D, P>) {
+  delete: function <R = never, D = never, P = never>(req: GateMethodRequest<D, P>) {
     return getRequestMeta<R, D, P>({ ...req, method: "DELETE" });
   },
-  get: function <R, D, P>(req: GateMethodRequest<D, P>) {
+  get: function <R = never, D = never, P = never>(req: GateMethodRequest<D, P>) {
     return getRequestMeta<R, D, P>({ ...req, method: "GET" });
   },
-  patch: function <R, D, P>(
+  patch: function <R = never, D = never, P = never>(
     req: RequiredProp<GateMethodRequest<D, P>, "data">
   ) {
     return getRequestMeta<R, D, P>({ ...req, method: "PATCH" });
   },
-  post: function <R, D, P>(req: GateMethodRequest<D, P>) {
+  post: function <R = never, D = never, P = never>(req: GateMethodRequest<D, P>) {
     return getRequestMeta<R, D, P>({ ...req, method: "POST" });
   },
-  put: function <R, D, P>(req: RequiredProp<GateMethodRequest<D, P>, "data">) {
+  put: function <R = never, D = never, P = never>(req: RequiredProp<GateMethodRequest<D, P>, "data">) {
     return getRequestMeta<R, D, P>({ ...req, method: "PUT" });
   },
-  file: function <R, D, P>({
+  file: function <R = never, D = never, P = never>({
     data,
     ...rest
   }: RequiredProp<GateMethodRequest<D, P>, "data">) {

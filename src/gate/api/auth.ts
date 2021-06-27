@@ -1,11 +1,11 @@
-import type {} from "@types";
+import type { ApiTokenauthRefreshtokenPostParams, RefreshTokenResult } from "@types";
 
 import gate from "../gate";
 import client from "../http-clients/auth";
 
 const auth = {
-  refresh: (params: any) =>
-    gate.post<any, never, any>({
+  refresh: (params: ApiTokenauthRefreshtokenPostParams) =>
+    gate.post<RefreshTokenResult, never, ApiTokenauthRefreshtokenPostParams>({
       client,
       url: "TokenAuth/RefreshToken",
       data: undefined,

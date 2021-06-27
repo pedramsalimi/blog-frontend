@@ -1,7 +1,6 @@
 module.exports = {
-  defaultLocale: "en",
-  locales: ["en"],
+  defaultLocale: "de",
+  locales: ["en", "de"],
   localeDetection: false,
-  localesName: {  en: "English" }, 
-  pages: { },
+  namespaces: ["common", "home", "about"],
 };

@@ -3,6 +3,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
 const withSvgr = require("./plugins/svgr");
+const i18n = require("./i18n");
 // const withMoment = require("./plugins/moment");
 
 module.exports = withPlugins([[withBundleAnalyzer], [withSvgr]], {
@@ -11,6 +12,7 @@ module.exports = withPlugins([[withBundleAnalyzer], [withSvgr]], {
   images: {
     domains: [],
   },
+  i18n,
   async headers() {
     return [
       {

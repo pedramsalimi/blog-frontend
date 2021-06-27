@@ -1,22 +1,26 @@
 import type { PageProps } from "@types";
-import type { GetStaticProps, NextPage } from "next";
+import type { GetServerSideProps, NextPage } from "next";
+
+import Home from "@templates/Home";
 
 interface HomeProps extends PageProps {}
 
-const Home: NextPage<HomeProps> = function () {
-  return <div>Home</div>;
+const HomePage: NextPage<HomeProps> = function () {
+  return <Home />;
 };
 
-export const getStaticProps: GetStaticProps<HomeProps> = async ({ locale }) => {
+export const getServerSideProps: GetServerSideProps<HomeProps> = async ({
+  locale,
+}) => {
   return {
     props: {
       messages: {
-        ...require(`../../locales/${locale}/home.json`),
-        ...require(`../../locales/${locale}/common.json`),
+        ...require(`../locales/${locale}/home.json`),
+        ...require(`../locales/${locale}/common.json`),
       },
-      now: new Date(),
+      now: new Date().getTime(),
     },
   };
 };
 
-export default Home;
+export default HomePage;

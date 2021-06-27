@@ -10,22 +10,22 @@ const plugin = async () => {
 
   try {
     console.log("loading translations ...");
-    const { locales, pages } = require(path.join(dir, "i18n"));
-    const namespaces = Object.keys(pages).reduce(
-      (acc, curr) => {
-        const p = pages[curr];
-        p.forEach((f) => {
-          if (!acc[f]) {
-            acc[f] = true;
-            acc["array"].push(f);
-          }
-        });
-        return acc;
-      },
-      { array: [] }
-    ).array;
+    const { locales, namespaces } = require(path.join(dir, "i18n"));
+    // const namespaces = Object.keys(namespaces).reduce(
+    //   (acc, curr) => {
+    //     const p = pages[curr];
+    //     p.forEach((f) => {
+    //       if (!acc[f]) {
+    //         acc[f] = true;
+    //         acc["array"].push(f);
+    //       }
+    //     });
+    //     return acc;
+    //   },
+    //   { array: [] }
+    // ).array;
 
-    const localesPath = path.join(dir, "locales");
+    const localesPath = path.join(dir, "./src/locales");
     try {
       try {
         if (fs.existsSync(localesPath)) {
