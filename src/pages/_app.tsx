@@ -1,15 +1,16 @@
-import type { AppProps } from "next/app";
+import type { AppContext, AppInitialProps, AppProps } from "next/app";
 import type { PageProps, PageWithLayout } from "@types";
 
 import { useEffect } from "react";
 import { Provider } from "react-redux";
 import { useRouter } from "next/router";
-import { getCookie } from "@utils/Cookies";
+import { getCookie, setContext } from "@utils/Cookies";
 import { COOKIE_LCOALE_KEY } from "@utils/constants";
 import store from "@store";
 import { getDefaultLayout } from "@layouts";
 import { NextIntlProvider } from "next-intl";
 import NProgress from "nprogress";
+import App from "next/app";
 
 function MyApp({ Component, pageProps }: AppProps<PageProps>) {
   const { locale, events } = useRouter();
@@ -72,5 +73,12 @@ function MyApp({ Component, pageProps }: AppProps<PageProps>) {
     </NextIntlProvider>
   );
 }
+
+// MyApp.getInitialProps = async (
+//   appContext: AppContext
+// ): Promise<AppInitialProps> => {
+//   const appProps = await App.getInitialProps(appContext);
+//   return { pageProps: {} };
+// };
 
 export default MyApp;

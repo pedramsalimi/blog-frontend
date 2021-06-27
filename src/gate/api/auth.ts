@@ -1,4 +1,9 @@
-import type { ApiTokenauthRefreshtokenPostParams, RefreshTokenResult } from "@types";
+import type {
+  ApiTokenauthRefreshtokenPostParams,
+  RefreshTokenResult,
+  AuthenticateModel,
+  AuthenticateResultModel,
+} from "@types";
 
 import gate from "../gate";
 import client from "../http-clients/auth";
@@ -10,6 +15,12 @@ const auth = {
       url: "TokenAuth/RefreshToken",
       data: undefined,
       params: params,
+    }),
+  login: (data: AuthenticateModel) =>
+    gate.post<AuthenticateResultModel, AuthenticateModel>({
+      client,
+      url: "/TokenAuth/Authenticate",
+      data,
     }),
 };
 

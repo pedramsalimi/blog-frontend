@@ -1,9 +1,10 @@
-import type { GetServerSidePropsContext } from "next";
+import type { GetServerSidePropsContext, NextPageContext } from "next";
 import type { AppContext } from "next/app";
 
 import { Cookie } from "./Cookie";
 
-let ctx: AppContext | undefined;
+type CookieContext = NextPageContext | GetServerSidePropsContext | undefined;
+let ctx: CookieContext;
 let cookie: Cookie | undefined;
 
 export const getCookie = () => {
@@ -15,8 +16,8 @@ export const getCookieFromContext = (
   return new Cookie(ctxOrCookie);
 };
 
-export const setContext = (ctxOrCookie: AppContext | undefined) => {
+export const setContext = (ctxOrCookie: CookieContext) => {
   ctx = ctxOrCookie;
-  cookie = new Cookie(ctx?.ctx);
+  cookie = new Cookie(ctx);
 };
-export const getLocale = () => ctx?.router?.locale || "";
+export const getLocale = () => ctx?.locale || "";
