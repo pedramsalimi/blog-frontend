@@ -2,5 +2,5 @@ module.exports = {
   defaultLocale: "de",
   locales: ["en", "de"],
   localeDetection: false,
-  namespaces: ["common", "home", "about"],
+  namespaces: ["common", "home", "about", "posts"],
 };
