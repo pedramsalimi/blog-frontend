@@ -3,12 +3,6 @@ import type { GetServerSideProps, NextPage } from "next";
 
 import Home from "@templates/Home";
 import { useTranslations } from "next-intl";
-import { getCookie, setContext } from "@utils/Cookies";
-import { authApi, userApi } from "@gate";
-import {
-  COOKIE_ACCESS_TOKEN_KEY,
-  COOKIE_REFRESH_TOKEN_KEY,
-} from "@utils/constants";
 
 interface HomeProps extends PageProps {}
 
