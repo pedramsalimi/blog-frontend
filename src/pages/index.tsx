@@ -2,11 +2,13 @@ import type { PageProps } from "@types";
 import type { GetServerSideProps, NextPage } from "next";
 
 import Home from "@templates/Home";
+import { useTranslations } from "next-intl";
 
 interface HomeProps extends PageProps {}
 
 const HomePage: NextPage<HomeProps> = function () {
-  return <Home />;
+  const t = useTranslations();
+  return <Home title={t("title") as string} />;
 };
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async ({
