@@ -3,11 +3,13 @@ import type { GetStaticProps } from "next";
 
 import About from "@templates/About";
 import { noLayout } from "@layouts";
+import { useTranslations } from "next-intl";
 
 interface HomeProps extends PageProps {}
 
 const AboutPage: PageWithLayout<HomeProps> = function () {
-  return <About />;
+  const t = useTranslations();
+  return <About title={t("title") as string} />;
 };
 
 export const getStaticProps: GetStaticProps<HomeProps> = async ({ locale }) => {
