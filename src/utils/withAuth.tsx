@@ -2,7 +2,7 @@ import type { GetServerSideProps, GetServerSidePropsContext } from "next";
 import React from "react";
 import { PageProps } from "@types";
 
-import { COOKIE_ACCESS_TOKEN_KEY } from "./constants";
+import {  COOKIE_REFRESH_TOKEN_KEY } from "./constants";
 import { getCookieFromContext } from "./Cookies";
 import { clientRedirect, serverRedirect } from "./redirect";
 
@@ -23,13 +23,14 @@ export function withAuth<T extends PageProps>(
   });
 }
 
-export function withAuthServerSideProps(
-  getServerSidePropsFunc: GetServerSideProps,
+export function withAuthServerSideProps<T>(
+  getServerSidePropsFunc: GetServerSideProps<T>,
   nextUrl: string
 ) {
   return async (context: GetServerSidePropsContext) => {
     const cookies = getCookieFromContext(context);
-    const token = cookies.get(COOKIE_ACCESS_TOKEN_KEY);
+    const token = cookies.get(COOKIE_REFRESH_TOKEN_KEY);
+
     if (context.req && !token) {
       return serverRedirect(context, {
         getUrl: (ctx) => {
@@ -38,6 +39,7 @@ export function withAuthServerSideProps(
         },
       });
     }
+
     if (getServerSidePropsFunc) {
       return await getServerSidePropsFunc(context);
     }
