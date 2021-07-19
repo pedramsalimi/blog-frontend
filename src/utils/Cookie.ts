@@ -86,6 +86,8 @@ class Cookie {
     if (typeof expires !== "undefined") {
       options.expires = new Date((new Date() as any) * 1 + expires * 864e5);
     }
+      
+    if (!options.path) options.path = "/";
 
     if (this.isServer && this.ctx && this.ctx.res) {
       const cookies: string[] =
